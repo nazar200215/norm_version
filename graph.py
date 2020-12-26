@@ -1,7 +1,7 @@
 from collections import defaultdict
 from heapq import *
 
-import networkx as nx
+
 from math import sqrt
 from roads import *
 
@@ -110,7 +110,7 @@ trash = Node("trash", 79, 36)
 left_corner_1 = Node("left_corner_1", 89, 99)
 left_corner_2 = Node("left_corner_2", 89, 113)
 
-house_1 = Node("house_1", 71, 143)
+house_1 = Node("house_1", 71, 173)
 
 left_corner_3 = Node("left_corner_3", 89, 175)
 left_corner_4 = Node("left_corner_4", 89, 190)
@@ -145,7 +145,7 @@ top_right_corner = Node("top_right_corner", 808, 36)
 right_corner_1 = Node("right_corner_1", 800, 99)
 right_corner_2 = Node("right_corner_2", 800, 113)
 
-house_12 = Node("house_1", 818, 143)  # TODO
+house_12 = Node("house_1", 818, 193)  # TODO
 
 right_corner_3 = Node("right_corner_3", 800, 175)
 right_corner_4 = Node("right_corner_4", 800, 190)
