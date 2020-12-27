@@ -6,7 +6,7 @@ from graph import adress
 from math import sqrt, acos, degrees
 
 
-white = (255, 255, 255)
+white = (143, 255, 255)
 select_car_action = ("MotorCycle", "PickupTruck",
                      "CityBioFuelCar", "CityElectricCar", "CityGasolinCar", "DumpTruck", "Bus")
 
@@ -19,19 +19,14 @@ dump_track = DumpTruck()
 bus = Bus()
 
 transport = (motorcycle, pickup, city_bio, city_electric, city_gasolin, dump_track, bus)
+transport_list = ["motorcycle", "pickup", "city_bio", "city_electric", "city_gasolin", "dump_track", "bus"]
+car_path = []
 
-car_path = [
-    ['house_6', 'top_right_corner', 'house_1', 'school', 'work_2', 'house_5', 'right_bot_corner', 'right_corner_12',
-     'left_bot_corner', 'house_2', 'work_1'],
-    ['work_1', 'factory', 'house_1', 'trash', 'house_7', 'house_6'],
-    ['bs_4', 'bs_2', 'left_corner_11', 'left_corner_12', 'bs_1', 'bs_3', 'right_corner_12', 'left_bot_corner',
-     'house_2', 'work_1', 'factory', 'house_1', 'trash'],
-    ['work_2', 'house_5', 'right_bot_corner', 'right_corner_12', 'left_bot_corner', 'house_2', 'work_1', 'factory',
-     'house_1', 'trash', 'left_corner_1', 'left_corner_2', 'bs_7', 'bs_5'],
-    ['work_1', 'factory', 'house_1', 'school', 'work_2', 'house_5', 'right_bot_corner', 'house_4'],
-    ['house_4', 'house_3'],
-    ['work_1', 'factory', 'house_1', 'school', 'work_2', 'house_5', 'right_bot_corner', 'house_4'],
-]
+for i in range(len(transport_list)):
+    print("Input the path for", transport_list[i], ":")
+    car_path.append(dijkstra(graph, input(), input()))
+
+
 
 
 class Simulation:
@@ -115,8 +110,8 @@ class Simulation:
                                         self.get_xy()
                                         break
 
-                if event.type == pygame.MOUSEBUTTONUP:
-                    pass
+                # if event.type == pygame.MOUSEBUTTONUP:
+                #     pass
 
             self.draw()
 
