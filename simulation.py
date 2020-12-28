@@ -66,7 +66,7 @@ class Simulation:
         self.buttons_width = (42, 80, 70, 70, 70, 159, 249, 25, 123)
         self.buttons_height = (17, 33, 31, 35, 50, 60, 65, 25, 25)
 
-        pygame.display.set_caption("ХУЙ")
+        pygame.display.set_caption("Transport")
 
     def run(self):
         run = True
@@ -83,7 +83,6 @@ class Simulation:
 
             pos = pygame.mouse.get_pos()
 
-            # Set the x, y postions of the mouse click
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -98,7 +97,7 @@ class Simulation:
                             if i <= 6:
                                 print(select_car_action[i])
                                 self.temp_name = select_car_action[i]
-                                # car = transport[i]
+
 
                                 self.display_info(self.get_transport_type(self.temp_name))
 
@@ -115,8 +114,6 @@ class Simulation:
                                         self.get_xy()
                                         break
 
-                if event.type == pygame.MOUSEBUTTONUP:
-                    pass
 
             self.draw()
 
@@ -138,10 +135,6 @@ class Simulation:
                     py = car.xy_pathway[car.pathway_point]
                     car.py = py[1]
 
-    # def draw_cars(self):
-    #     for car in self.transport_objects:
-    #         # pg.transform.rotozoom(IMAGE, 0, 2)
-    #         pass
 
     def scalar(self, x1, y1, x2, y2):
         return x1 * x2 + y1 * y2
@@ -152,14 +145,6 @@ class Simulation:
     def get_angle(self, x1, y1, x2, y2):
         return degrees(acos(self.scalar(x1, y1, x2, y2) /
                             (self.mod(x1, y1) * self.mod(x2, y2))))
-
-    def rotate_image(self, x1, y1, x2, y2, image):
-        x = 1
-        y = 0
-        if x2 > x1:
-            pass
-        else:
-            pass
 
     def update_car_xy(self):
         for car in self.transport_objects:
