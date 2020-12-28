@@ -15,7 +15,6 @@ class Road():
         self._fence = False
         self._max_speed = MAX_SPEED[self._name]
 
-    # возможно переделаю на осевую нагрузку
     def max_weight(self):
         return 0
 
@@ -46,7 +45,6 @@ class SimpleCityRoad(Road):
 class CityExpressRoad(Road):
     def __init__(self):
         self._name = "CityExpressRoad"
-        # Две 4 полосы
         super().__init__()
 
 
