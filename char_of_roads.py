@@ -10,13 +10,6 @@ ROAD_SURFACE = (
     "Asphalt", "Composite pavement", "Concrete"
 )
 
-# LINE_WIDTH = {
-#     "DirtRoad": 4.5,
-#     "SimpleCityRoad": 3.5,
-#     "CityExpressRoad": 3.75,
-#     "Highway": 3.75,
-#     "Freeway": 3.75
-# }
 
 SEPERATE_LINE_WIDTH = 0.2
 

@@ -26,9 +26,6 @@ for i in range(len(transport_list)):
     print("Input the path for", transport_list[i], ":")
     car_path.append(dijkstra(graph, input(), input()))
 
-
-
-
 class Simulation:
     def __init__(self, win):
         self.width = 1150
@@ -46,8 +43,6 @@ class Simulation:
         self.dump_track = pygame.image.load("img\\dump 1.png").convert_alpha()
         self.bus = pygame.image.load("img\\bus 1.png").convert_alpha()
         self.info_box = pygame.image.load("img\\information.png").convert_alpha()
-        # self.add = pygame.image.load("img\\add_transport.png").convert_alpha()
-        # self.close_b = pygame.image.load("img\\close_information.png").convert_alpha()
 
         self.temp_name = ""
         self.transport_objects = []
@@ -110,9 +105,6 @@ class Simulation:
                                         self.get_xy()
                                         break
 
-                # if event.type == pygame.MOUSEBUTTONUP:
-                #     pass
-
             self.draw()
 
         pygame.quit()
@@ -133,11 +125,6 @@ class Simulation:
                     py = car.xy_pathway[car.pathway_point]
                     car.py = py[1]
 
-    # def draw_cars(self):
-    #     for car in self.transport_objects:
-    #         # pg.transform.rotozoom(IMAGE, 0, 2)
-    #         pass
-
     def scalar(self, x1, y1, x2, y2):
         return x1 * x2 + y1 * y2
 
@@ -147,14 +134,6 @@ class Simulation:
     def get_angle(self, x1, y1, x2, y2):
         return degrees(acos(self.scalar(x1, y1, x2, y2) /
                             (self.mod(x1, y1) * self.mod(x2, y2))))
-
-    def rotate_image(self, x1, y1, x2, y2, image):
-        x = 1
-        y = 0
-        if x2 > x1:
-            pass
-        else:
-            pass
 
     def update_car_xy(self):
         for car in self.transport_objects:
@@ -247,8 +226,6 @@ class Simulation:
         fuel_type = font.render(f_type, True, white)
         weight = font.render(w, True, white)
         max_speed = font.render(max_s, True, white)
-
-        info_text = (base_mount_of_fuel, fuel_type, weight, max_speed)
 
         temp_y = 632
         self.screen.blit(base_mount_of_fuel, dest=(105, temp_y))

@@ -360,4 +360,4 @@ graph = [
 
 
 # print(graph)
-print(dijkstra(graph, bs_7.get_name(), house_6.get_name()))
+print(dijkstra(graph, house_4.get_name(), house_12.get_name()))
