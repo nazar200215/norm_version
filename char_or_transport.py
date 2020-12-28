@@ -27,10 +27,6 @@ WHEELS_TYPE = {
     "Ordinary": 4
 }
 
-GOODS = {
-
-}
-
 MAX_PASSENGER_NUMBER = {
     "Bus": 70,
     "CityGasolinCar": 6,
