@@ -1,6 +1,5 @@
 import sys
 
-sys.path.append("ka-8226\\src\\constants\\roads_constants.py")
 from char_of_roads import *
 
 
