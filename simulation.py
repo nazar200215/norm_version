@@ -98,13 +98,13 @@ class Simulation:
                                 self.display_info(self.get_transport_type(self.temp_name))
 
                                 break
-                            elif i == 7:
+                            elif i == len(transport_list):
                                 self.temp_name = ""
                             else:
                                 car = self.get_transport_type(self.temp_name)
                                 self.transport_objects.append(car)
 
-                                for i in range(7):
+                                for i in range(len(transport_list)):
                                     if car.get_name() == select_car_action[i]:
                                         car.set_pathway(car_path[i])
                                         self.get_xy()

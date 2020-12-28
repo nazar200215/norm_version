@@ -109,94 +109,94 @@ trash = Node("trash", 79, 36)
 left_corner_1 = Node("left_corner_1", 89, 99)
 left_corner_2 = Node("left_corner_2", 90, 113)
 
-house_1 = Node("house_1", 71, 173)
+house_1 = Node("house_1", 71, 143)
 
-left_corner_3 = Node("left_corner_3", 89, 175)
-left_corner_4 = Node("left_corner_4", 89, 190)
+left_corner_3 = Node("left_corner_3", 90, 175)
+left_corner_4 = Node("left_corner_4", 91, 189)
 
-left_corner_51 = Node("left_corner_51", 89, 259)
+left_corner_51 = Node("left_corner_51", 88, 259)
 left_corner_52 = Node("left_corner_52", 89, 271)
 
 factory = Node("factory", 71, 296)
 
-left_corner_61 = Node("left_corner_61", 89, 325)
-left_corner_62 = Node("left_corner_62", 89, 338)
+left_corner_61 = Node("left_corner_61", 90, 324)
+left_corner_62 = Node("left_corner_62", 91, 338)
 
-left_corner_71 = Node("left_corner_71", 89, 398)
+left_corner_71 = Node("left_corner_71", 88, 398)
 left_corner_72 = Node("left_corner_72", 89, 412)
 
 work_1 = Node("work_1", 71, 425)
 
-left_corner_81 = Node("left_corner_81", 89, 434)
+left_corner_81 = Node("left_corner_81", 88, 434)
 left_corner_82 = Node("left_corner_82", 89, 448)
 
 left_corner_9 = Node("left_corner_9", 89, 493)
-left_corner_10 = Node("left_corner_10", 89, 507)
+left_corner_10 = Node("left_corner_10", 90, 507)
 
 house_2 = Node("house_2", 71, 544)
 
-left_corner_11 = Node("left_corner_11", 89, 569)
-left_corner_12 = Node("left_corner_12", 89, 583)
+left_corner_11 = Node("left_corner_11", 90, 569)
+left_corner_12 = Node("left_corner_12", 91, 583)
 
 left_bot_corner = Node("left_bot_corner", 81, 633)
 
-top_right_corner = Node("top_right_corner", 808, 36)
-right_corner_1 = Node("right_corner_1", 800, 99)
-right_corner_2 = Node("right_corner_2", 800, 113)
+top_right_corner = Node("top_right_corner", 808, 37)
+right_corner_1 = Node("right_corner_1", 800, 101)
+right_corner_2 = Node("right_corner_2", 801, 115)
 
-house_12 = Node("house_1", 818, 193)  # TODO
+house_12 = Node("house_12", 818, 140)  # TODO
 
-right_corner_3 = Node("right_corner_3", 800, 175)
-right_corner_4 = Node("right_corner_4", 800, 190)
+right_corner_3 = Node("right_corner_3", 798, 176)
+right_corner_4 = Node("right_corner_4", 799, 190)
 
-right_corner_51 = Node("right_corner_51", 800, 259)
+right_corner_51 = Node("right_corner_51", 799, 257)
 right_corner_52 = Node("right_corner_52", 800, 271)
 
 school = Node("school", 818, 296)
 
-right_corner_61 = Node("right_corner_61", 800, 325)
-right_corner_62 = Node("right_corner_62", 800, 338)
+right_corner_61 = Node("right_corner_61", 800, 324)
+right_corner_62 = Node("right_corner_62", 801, 338)
 
-right_corner_71 = Node("right_corner_71", 800, 398)
+right_corner_71 = Node("right_corner_71", 799, 398)
 right_corner_72 = Node("right_corner_72", 800, 412)
 
 work_2 = Node("work_2", 818, 428)
 
-right_corner_81 = Node("right_corner_81", 800, 434)
+right_corner_81 = Node("right_corner_81", 799, 434)
 right_corner_82 = Node("right_corner_82", 800, 448)
 
-right_corner_9 = Node("right_corner_9", 800, 493)
-right_corner_10 = Node("right_corner_10", 800, 507)
+right_corner_9 = Node("right_corner_9", 798, 493)
+right_corner_10 = Node("right_corner_10", 799, 507)
 
-house_5 = Node("house_5", 818, 544)
+house_5 = Node("house_5", 821, 538)
 
-right_corner_11 = Node("right_corner_11", 800, 569)
-right_corner_12 = Node("right_corner_12", 800, 583)
+right_corner_11 = Node("right_corner_11", 799, 570)
+right_corner_12 = Node("right_corner_12", 800, 584)
 
 right_bot_corner = Node("right_bot_corner", 808, 633)
 
 house_3 = Node("house_3", 256, 633)
 house_4 = Node("house_4", 666, 633)
 
-house_6 = Node("house_6", 666, 38)
+house_6 = Node("house_6", 661, 38)
 house_7 = Node("house_7", 250, 38)
 
 house_8 = Node("house_8", 437, 175)
-house_9 = Node("house_9", 250, 190)
-house_10 = Node("house_10", 664, 190)
-house_11 = Node("house_11", 443, 507)
+house_9 = Node("house_9", 255, 194)
+house_10 = Node("house_10", 664, 195)
+house_11 = Node("house_11", 443, 510)
 
-bs_1 = Node("bs_1", 256, 569)
+bs_1 = Node("bs_1", 255, 566)
 bs_2 = Node("bs_2", 256, 584)
 
-bs_3 = Node("bs_3", 666, 569)
-bs_4 = Node("bs_4", 666, 584)
+bs_3 = Node("bs_3", 663, 570)
+bs_4 = Node("bs_4", 663, 584)
 
-bs_5 = Node("bs_5", 256, 100)
-bs_6 = Node("bs_6", 256, 113)
+bs_5 = Node("bs_5", 252, 100)
+bs_6 = Node("bs_6", 252, 113)
 
-bs_7 = Node("bs_7", 666, 100)
-bs_8 = Node("bs_8", 666, 113)
+bs_7 = Node("bs_7", 664, 101)
+bs_8 = Node("bs_8", 665, 115)
 
 adress = [bs_8, bs_7, bs_6, bs_5, bs_4, bs_3, bs_2, bs_1,
           house_1, house_2, house_3, house_4, house_5, house_6,
@@ -360,4 +360,4 @@ graph = [
 
 
 # print(graph)
-print(dijkstra(graph,trash.get_name(), work_1.get_name()))
+print(dijkstra(graph, bs_7.get_name(), house_6.get_name()))
