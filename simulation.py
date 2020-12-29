@@ -57,7 +57,7 @@ class Simulation:
         self.buttons_width = (42, 80, 70, 70, 70, 159, 249, 25, 123)
         self.buttons_height = (17, 33, 31, 35, 50, 60, 65, 25, 25)
 
-        pygame.display.set_caption("ХУЙ")
+        pygame.display.set_caption("ПОСТАВТЕ ШІСТДЕСЯТ(ДЯКУЮ)")
 
     def run(self):
         run = True
