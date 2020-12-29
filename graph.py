@@ -25,7 +25,7 @@ def dijkstra(edges, f, t):
             seen.add(v1)
             path = [v1] + path
             if v1 == t:
-                return (path)
+                return path
 
             for c, v2 in g.get(v1, ()):
                 if v2 in seen:
@@ -39,7 +39,7 @@ def dijkstra(edges, f, t):
     return float("inf"), []
 
 
-class Node():
+class Node:
     def __init__(self, name, x, y):
         self._x = x
         self._y = y
@@ -54,11 +54,8 @@ class Node():
     def get_name(self):
         return self._name
 
-    def __str__(self):
-        return self._name
 
-
-class Edge():
+class Edge:
     def __init__(self, node_1, node_2, road, orientation, car_max_speed):
         self._car_max_speed = car_max_speed
         self._node_1 = node_1
@@ -117,7 +114,7 @@ left_corner_4 = Node("left_corner_4", 91, 189)
 left_corner_51 = Node("left_corner_51", 88, 259)
 left_corner_52 = Node("left_corner_52", 89, 271)
 
-factory = Node("factory", 71, 296)
+factory = Node("factory", 72, 315)
 
 left_corner_61 = Node("left_corner_61", 90, 324)
 left_corner_62 = Node("left_corner_62", 91, 338)
@@ -210,30 +207,58 @@ adress = [bs_8, bs_7, bs_6, bs_5, bs_4, bs_3, bs_2, bs_1,
 
 graph = [
     (house_7.get_name(), trash.get_name(), Edge(house_7, trash, dirt_road, 'l', max_speed).get_time()),
-    (house_6.get_name(), house_7.get_name(), Edge(house_6, house_7, dirt_road, 'l', max_speed).get_time()),
-    (top_right_corner.get_name(), house_6.get_name(),
-     Edge(top_right_corner, house_6, dirt_road, 'l', max_speed).get_time()),
+    (house_7.get_name(), house_6.get_name(), Edge(house_7, house_6, dirt_road, 'l', max_speed).get_time()),
+    (top_right_corner.get_name(), house_6.get_name(), Edge(top_right_corner, house_6, dirt_road, 'l', max_speed).get_time()),
 
     (trash.get_name(), house_1.get_name(), Edge(trash, house_1, highway, 'd', max_speed).get_time()),
     (house_1.get_name(), factory.get_name(), Edge(house_1, factory, highway, 'd', max_speed).get_time()),
+    (house_1.get_name(), left_corner_1.get_name(), Edge(house_1, left_corner_1, highway, 'd', max_speed).get_time()),
+    (house_1.get_name(), left_corner_2.get_name(), Edge(house_1, left_corner_2, highway, 'd', max_speed).get_time()),
+    (house_1.get_name(), left_corner_3.get_name(), Edge(house_1, left_corner_3, highway, 'd', max_speed).get_time()),
+    (house_1.get_name(), left_corner_4.get_name(), Edge(house_1, left_corner_4, highway, 'd', max_speed).get_time()),
     (factory.get_name(), work_1.get_name(), Edge(factory, work_1, highway, 'd', max_speed).get_time()),
     (work_1.get_name(), house_2.get_name(), Edge(work_1, house_2, highway, 'd', max_speed).get_time()),
-    (
-    house_2.get_name(), left_bot_corner.get_name(), Edge(house_2, left_bot_corner, highway, 'd', max_speed).get_time()),
+    (work_1.get_name(), left_corner_71.get_name(), Edge(work_1, left_corner_71, highway, 'd', max_speed).get_time()),
+    (work_1.get_name(), left_corner_72.get_name(), Edge(work_1, left_corner_72, highway, 'd', max_speed).get_time()),
+    (work_1.get_name(), left_corner_81.get_name(), Edge(work_1, left_corner_81, highway, 'd', max_speed).get_time()),
+    (work_1.get_name(), left_corner_82.get_name(), Edge(work_1, left_corner_82, highway, 'd', max_speed).get_time()),
+    (house_2.get_name(), left_bot_corner.get_name(), Edge(house_2, left_bot_corner, highway, 'd', max_speed).get_time()),
+    (house_2.get_name(), left_corner_9.get_name(), Edge(house_2, left_corner_9, highway, 'd', max_speed).get_time()),
+    (house_2.get_name(), left_corner_10.get_name(), Edge(house_2, left_corner_10, highway, 'd', max_speed).get_time()),
+    (house_2.get_name(), left_corner_11.get_name(), Edge(house_2, left_corner_11, highway, 'd', max_speed).get_time()),
+    (house_2.get_name(), left_corner_12.get_name(), Edge(house_2, left_corner_12, highway, 'd', max_speed).get_time()),
+    (factory.get_name(), left_corner_62.get_name(), Edge(factory, left_corner_62, highway, 'r', max_speed).get_time()),
+    (factory.get_name(), left_corner_61.get_name(), Edge(factory, left_corner_62, highway, 'r', max_speed).get_time()),
+    (factory.get_name(), left_corner_52.get_name(), Edge(factory, left_corner_52, highway, 'r', max_speed).get_time()),
+    (factory.get_name(), left_corner_51.get_name(), Edge(factory, left_corner_51, highway, 'r', max_speed).get_time()),
 
-    (left_bot_corner.get_name(), house_3.get_name(),
-     Edge(left_bot_corner, house_3, dirt_road, 'r', max_speed).get_time()),
+    (left_bot_corner.get_name(), house_3.get_name(), Edge(left_bot_corner, house_3, dirt_road, 'r', max_speed).get_time()),
     (house_3.get_name(), house_4.get_name(), Edge(house_3, house_4, dirt_road, 'r', max_speed).get_time()),
-    (house_4.get_name(), right_bot_corner.get_name(),
-     Edge(house_4, right_bot_corner, dirt_road, 'r', max_speed).get_time()),
+    (house_4.get_name(), right_bot_corner.get_name(), Edge(house_4, right_bot_corner, dirt_road, 'r', max_speed).get_time()),
 
     (right_bot_corner.get_name(), house_5.get_name(),
      Edge(right_bot_corner, house_5, highway, 'u ', max_speed).get_time()),
     (house_5.get_name(), work_2.get_name(), Edge(house_5, work_2, highway, 'u ', max_speed).get_time()),
+    (house_5.get_name(), right_corner_9.get_name(), Edge(house_5, right_corner_9, highway, 'u ', max_speed).get_time()),
+    (house_5.get_name(), right_corner_10.get_name(), Edge(house_5, right_corner_10, highway, 'u ', max_speed).get_time()),
+    (house_5.get_name(), right_corner_11.get_name(), Edge(house_5, right_corner_11, highway, 'u ', max_speed).get_time()),
+    (house_5.get_name(), right_corner_12.get_name(), Edge(house_5, right_corner_12, highway, 'u ', max_speed).get_time()),
     (work_2.get_name(), school.get_name(), Edge(work_2, school, highway, 'u ', max_speed).get_time()),
+    (work_2.get_name(), right_corner_71.get_name(), Edge(work_2, right_corner_71, highway, 'u ', max_speed).get_time()),
+    (work_2.get_name(), right_corner_72.get_name(), Edge(work_2, right_corner_72, highway, 'u ', max_speed).get_time()),
+    (work_2.get_name(), right_corner_81.get_name(), Edge(work_2, right_corner_81, highway, 'u ', max_speed).get_time()),
+    (work_2.get_name(), right_corner_82.get_name(), Edge(work_2, right_corner_82, highway, 'u ', max_speed).get_time()),
     (school.get_name(), house_12.get_name(), Edge(school, house_12, highway, 'u ', max_speed).get_time()),
-    (house_12.get_name(), top_right_corner.get_name(),
-     Edge(house_12, top_right_corner, highway, 'u ', max_speed).get_time()),
+    (school.get_name(), right_corner_51.get_name(), Edge(school, right_corner_51, highway, 'u ', max_speed).get_time()),
+    (school.get_name(), right_corner_52.get_name(), Edge(school, right_corner_52, highway, 'u ', max_speed).get_time()),
+    (school.get_name(), right_corner_61.get_name(), Edge(school, right_corner_61, highway, 'u ', max_speed).get_time()),
+    (school.get_name(), right_corner_62.get_name(), Edge(school, right_corner_62, highway, 'u ', max_speed).get_time()),
+
+    (house_12.get_name(), top_right_corner.get_name(), Edge(house_12, top_right_corner, highway, 'u ', max_speed).get_time()),
+    (house_12.get_name(), right_corner_1.get_name(), Edge(house_12, right_corner_1, highway, 'u ', max_speed).get_time()),
+    (house_12.get_name(), right_corner_2.get_name(), Edge(house_12, right_corner_2, highway, 'u ', max_speed).get_time()),
+    (house_12.get_name(), right_corner_3.get_name(), Edge(house_12, right_corner_3, highway, 'u ', max_speed).get_time()),
+    (house_12.get_name(), right_corner_4.get_name(), Edge(house_12, right_corner_4, highway, 'u ', max_speed).get_time()),
 
     (top_right_corner.get_name(), right_corner_1.get_name(),
      Edge(top_right_corner, right_corner_1, highway, 'd', max_speed).get_time()),
@@ -340,8 +365,7 @@ graph = [
     (right_corner_9.get_name(), left_corner_9.get_name(),
      Edge(right_corner_9, left_corner_9, highway, 'l', max_speed).get_time()),
 
-    (
-    house_11.get_name(), left_corner_10.get_name(), Edge(house_11, left_corner_10, highway, 'r', max_speed).get_time()),
+    (house_11.get_name(), left_corner_10.get_name(), Edge(house_11, left_corner_10, highway, 'r', max_speed).get_time()),
     (right_corner_10.get_name(), house_11.get_name(),
      Edge(right_corner_10, house_11, highway, 'r', max_speed).get_time()),
 
@@ -360,4 +384,4 @@ graph = [
 
 
 # print(graph)
-print(dijkstra(graph, house_12.get_name(), work_1.get_name()))
+print(dijkstra(graph, trash.get_name(), house_3.get_name()))

@@ -18,7 +18,7 @@ class Transport:
         self._y = None
         self._on_road = False
         self.xy_pathway = []
-        self.pathway_point = 1
+        self.pathway_point = 0
         self.drove_the_way = False
         self.px = None
         self.py = None

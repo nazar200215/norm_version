@@ -5,7 +5,6 @@ from graph import *
 from graph import adress
 from math import sqrt, acos, degrees
 
-
 white = (143, 54, 255)
 select_car_action = ("MotorCycle", "PickupTruck",
                      "CityBioFuelCar", "CityElectricCar", "CityGasolinCar", "DumpTruck", "Bus")
@@ -24,7 +23,9 @@ car_path = []
 
 for i in range(len(transport_list)):
     print("Input the path for", transport_list[i], ":")
-    car_path.append(dijkstra(graph, input(), input()))
+    i1, i2 = input(), input()
+    car_path.append(dijkstra(graph, i1, i2))
+    print(dijkstra(graph, i1, i2))
 
 
 class Simulation:
@@ -57,7 +58,7 @@ class Simulation:
         self.buttons_width = (42, 80, 70, 70, 70, 159, 249, 25, 123)
         self.buttons_height = (17, 33, 31, 35, 50, 60, 65, 25, 25)
 
-        pygame.display.set_caption("ПОСТАВТЕ ШІСТДЕСЯТ(ДЯКУЮ)")
+        pygame.display.set_caption("НАЙКРАЩА СИМУЛЯЦІЯ ТРАНСПОРТУ, ЯКУ ВИ КОЛИ-НЕБУТЬ БАЧИЛИ")
 
     def run(self):
         run = True
@@ -73,8 +74,6 @@ class Simulation:
             self.draw_info()
 
             pos = pygame.mouse.get_pos()
-
-            # Set the x, y postions of the mouse click
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -93,7 +92,7 @@ class Simulation:
                                 self.display_info(self.get_transport_type(self.temp_name))
 
                                 break
-                            elif i == len(transport_list):
+                            elif i == 7:
                                 self.temp_name = ""
                             else:
                                 car = self.get_transport_type(self.temp_name)
@@ -104,7 +103,8 @@ class Simulation:
                                         car.set_pathway(car_path[i])
                                         self.get_xy()
                                         break
-                self.draw()
+
+            self.draw()
 
         pygame.quit()
 
@@ -117,7 +117,7 @@ class Simulation:
                             car.xy_pathway.append([a.get_x(), a.get_y()])
                             car.set_x(a.get_x())
                             car.set_y(a.get_y())
-                if car.px == None and car.py == None:
+                if car.px is None and car.py is None:
                     px = car.xy_pathway[car.pathway_point]
                     car.px = px[0]
                     py = car.xy_pathway[car.pathway_point]
@@ -153,21 +153,15 @@ class Simulation:
                     py = car.xy_pathway[car.pathway_point]
                     car.py = py[1]
                 else:
-                    car.xy_pathway.reverse()
+                    pass
 
-                    car.pathway_point = 1
-
-                    px = car.xy_pathway[car.pathway_point]
-                    car.px = px[0]
-                    py = car.xy_pathway[car.pathway_point]
-                    car.py = py[1]
 
     def draw_car(self):
         self.update_car_xy()
         for car in self.transport_objects:
-            for i in range(len(transport)):
-                if car.get_name() == transport[i].get_name():
-                    im = self.buttons[i]
+            for j in range(len(transport)):
+                if car.get_name() == transport[j].get_name():
+                    im = self.buttons[j]
                     im_small = pygame.transform.rotozoom(im, 0, 0.2)
                     self.screen.blit(im_small, (car.get_x(), car.get_y()))
 
