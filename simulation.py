@@ -6,7 +6,7 @@ from graph import adress
 from math import sqrt, acos, degrees
 
 
-white = (143, 255, 255)
+white = (143, 54, 255)
 select_car_action = ("MotorCycle", "PickupTruck",
                      "CityBioFuelCar", "CityElectricCar", "CityGasolinCar", "DumpTruck", "Bus")
 
@@ -25,6 +25,7 @@ car_path = []
 for i in range(len(transport_list)):
     print("Input the path for", transport_list[i], ":")
     car_path.append(dijkstra(graph, input(), input()))
+
 
 class Simulation:
     def __init__(self, win):
@@ -88,7 +89,6 @@ class Simulation:
                             if i <= 6:
                                 print(select_car_action[i])
                                 self.temp_name = select_car_action[i]
-                                # car = transport[i]
 
                                 self.display_info(self.get_transport_type(self.temp_name))
 
@@ -104,8 +104,7 @@ class Simulation:
                                         car.set_pathway(car_path[i])
                                         self.get_xy()
                                         break
-
-            self.draw()
+                self.draw()
 
         pygame.quit()
 
@@ -113,7 +112,6 @@ class Simulation:
         for car in self.transport_objects:
             if car.xy_pathway == []:
                 for path in car.get_pathway():
-                    i = 0
                     for a in adress:
                         if a.get_name() == path:
                             car.xy_pathway.append([a.get_x(), a.get_y()])
@@ -181,7 +179,7 @@ class Simulation:
         select_car_text = font.render("SELECT A CAR", True, white)
         self.screen.blit(select_car_text, dest=(925, 14))
 
-    def draw_selection_cars(self):  # пихнуть в цикл
+    def draw_selection_cars(self):
         self.screen.blit(self.motorcycle, (995, 90))
         self.screen.blit(self.pickup, (975, 150))
         self.screen.blit(self.city_bio, (980, 235))

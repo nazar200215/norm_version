@@ -144,7 +144,7 @@ top_right_corner = Node("top_right_corner", 808, 37)
 right_corner_1 = Node("right_corner_1", 800, 101)
 right_corner_2 = Node("right_corner_2", 801, 115)
 
-house_12 = Node("house_12", 818, 140)  # TODO
+house_12 = Node("house_12", 818, 170)  # TODO
 
 right_corner_3 = Node("right_corner_3", 798, 176)
 right_corner_4 = Node("right_corner_4", 799, 190)
@@ -360,4 +360,4 @@ graph = [
 
 
 # print(graph)
-print(dijkstra(graph, house_4.get_name(), house_12.get_name()))
+print(dijkstra(graph, house_12.get_name(), work_1.get_name()))
